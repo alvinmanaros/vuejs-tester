@@ -4,10 +4,19 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
+    {{ app_url }}
     <router-view/>
   </div>
 </template>
-
+<script>
+export default {
+  computed: {
+    app_url() {
+      return process.env.VUE_APP_URL
+    }
+  },
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
